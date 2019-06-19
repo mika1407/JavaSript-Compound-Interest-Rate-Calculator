@@ -1,4 +1,38 @@
- // ---------- PROBLEM : COMPOUNDING INTEREST ----------
+// You can create custom ranges with Array.from
+// Define how many items to generate and the arrow
+// function to pop out values from 0 to 4
+let a1 = Array.from({length: 5}, (x,i) => i);
+console.log(a1);
+ 
+// This can be abbreviated
+// The rest parameter ... binds to the array
+// that will contain the numbers 0 - 4
+// keys() returns the generated list
+let a2 = [...Array(5).keys()];
+console.log(a2);
+ 
+// Create a custom array with start, stop and step
+const range = (start, stop, step) => Array.from({length: (stop - start) / step + 1}, (x,i) => start + (i * step));
+ 
+// 50 - 10 / 10 + 1 = 5 length
+// 10 + 0, 10 + 10, ...
+let a3 = range(10, 50, 10);
+console.log(a3);
+ 
+// Use arrow operator to make 5 squares
+// The array is created with 5 spaces with the value
+// undefined represented by x
+// i has increasing values from 0 to 4 and we get
+// the square of each and then reassign to the array
+let a4 = Array.from({length: 5}, (x,i) => i * i);
+console.log(a4);
+ 
+// You can use for in to cycle through the array
+for(let i in a4){
+    console.log(i);
+}
+
+// ---------- PROBLEM : COMPOUNDING INTEREST ----------
 // Each year their investment will increase by their 
 // investment + their investment * the interest rate
  
